@@ -16,6 +16,21 @@
         vegaEmbed("#interactive_pie_chart", "https://raw.githubusercontent.com/dyc3-is445/HW6/main/interactive_pie_chart.json")
             .catch(console.error);
     </script>
+    <p>
+        <strong>Description:</strong> This chart visualizes the proportion of different License Types by City. 
+        Users can filter by selecting a city from the dropdown to explore the data for that city.
+    </p>
+    <p>
+        <strong>Design Choices:</strong> The chart encodes the percentage of each License Type as a slice of the pie chart 
+        and colors each slice according to the License Type. I chose this design to make it easy to compare the proportions visually. 
+        Data transformations involved aggregating counts of each License Type and calculating their percentage.
+    </p>
+    <p>
+        <strong>Interactivity:</strong> I added a dropdown filter to allow users to select a city. This makes the chart interactive and 
+        helps users explore the data in more detail.
+    </p>
+    <p><a href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/raw/main/licenses_fall2022.csv">The Data</a></p>
+    <p><a href="https://github.com/dyc3-is445/HW6/blob/main/interactive_pie_chart.json">The Analysis</a></p>
 
     <!-- Bar Chart -->
     <h2>Bar Chart</h2>
@@ -24,5 +39,21 @@
         vegaEmbed("#bar_chart", "https://raw.githubusercontent.com/dyc3-is445/HW6/main/bar_chart.json")
             .catch(console.error);
     </script>
+    <p>
+        <strong>Description:</strong> This bar chart visualizes the top 5 License Statuses in Chicago based on frequency. The chart 
+        shows the count of each License Status.
+    </p>
+    <p>
+        <strong>Design Choices:</strong> The `count` is mapped to the `y` axis and the `License Status` is mapped to the `x` axis. 
+        I used different colors for each License Status to enhance readability and comparison. Data was transformed by selecting 
+        the top 5 License Statuses and combining others into a single "Others" category.
+    </p>
+    <p>
+        <strong>Interactivity:</strong> This chart does not have additional interactivity but is still effective for comparing the 
+        top 5 License Statuses in Chicago.
+    </p>
+    <p><a href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/raw/main/licenses_fall2022.csv">The Data</a></p>
+    <p><a href="https://github.com/dyc3-is445/HW6/blob/main/bar_chart.json">The Analysis</a></p>
+
 </body>
 </html>
