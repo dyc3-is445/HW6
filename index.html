@@ -1,56 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HW6: Altair Visualizations</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
-    <h1>Homework 6.1: Altair Visualizations</h1>
+    <h1>Homework 6: Altair Visualizations</h1>
 
-    <!-- Interactive Pie Chart -->
-    <h2>Interactive Pie Chart</h2>
+    <!-- Percentage Distribution of License Types Across Cities -->
+    <h2>First Visualization: Percentage Distribution of License Types Across Cities</h2>
     <div id="interactive_pie_chart"></div>
     <script type="text/javascript">
         vegaEmbed("#interactive_pie_chart", "https://raw.githubusercontent.com/dyc3-is445/HW6/main/interactive_pie_chart.json")
             .catch(console.error);
     </script>
     <p>
-        <strong>Description:</strong> This chart visualizes the proportion of different License Types by City. 
-        Users can filter by selecting a city from the dropdown to explore the data for that city.
+        <strong>Description:</strong> This chart visualizes the percentage distribution of different license types across various cities. 
+        Users can select a city from the dropdown to explore the data for that city.
     </p>
     <p>
-        <strong>Design Choices:</strong> The chart encodes the percentage of each License Type as a slice of the pie chart 
-        and colors each slice according to the License Type. I chose this design to make it easy to compare the proportions visually. 
-        Data transformations involved aggregating counts of each License Type and calculating their percentage.
+        <strong>Design Choices:</strong> In this pie chart, the `theta` encoding represents the proportion of each license type, 
+        while the `color` encoding is used to distinguish between license types. The slices of the pie chart are color-coded based on 
+        license type to make the visualization easy to interpret. Data transformations involved aggregating counts of each license type 
+        and calculating the percentage for each type.
     </p>
     <p>
-        <strong>Interactivity:</strong> I added a dropdown filter to allow users to select a city. This makes the chart interactive and 
-        helps users explore the data in more detail.
+        <strong>Interactivity:</strong> A dropdown filter allows users to select a city, making the chart interactive. This interactivity 
+        enables users to explore license type distributions for individual cities, providing a more detailed view of the data.
     </p>
     <p><a href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/raw/main/licenses_fall2022.csv">The Data</a></p>
     <p><a href="https://github.com/dyc3-is445/HW6/blob/main/interactive_pie_chart.json">The Analysis</a></p>
 
     <!-- Bar Chart -->
-    <h2>Bar Chart</h2>
+    <h2>Second Visualization: Bar Chart of License Status in Chicago</h2>
     <div id="bar_chart"></div>
     <script type="text/javascript">
         vegaEmbed("#bar_chart", "https://raw.githubusercontent.com/dyc3-is445/HW6/main/bar_chart.json")
             .catch(console.error);
     </script>
     <p>
-        <strong>Description:</strong> This bar chart visualizes the top 5 License Statuses in Chicago based on frequency. The chart 
-        shows the count of each License Status.
+        <strong>Description:</strong> This bar chart visualizes the top 5 most common license statuses in Chicago. The chart shows 
+        the count of each license status, with any additional categories combined into an "Others" group.
     </p>
     <p>
-        <strong>Design Choices:</strong> The `count` is mapped to the `y` axis and the `License Status` is mapped to the `x` axis. 
-        I used different colors for each License Status to enhance readability and comparison. Data was transformed by selecting 
-        the top 5 License Statuses and combining others into a single "Others" category.
+        <strong>Design Choices:</strong> In this bar chart, the `x` axis represents the different license statuses, and the `y` axis 
+        shows the count for each status. Different colors are used for each license status to improve readability and facilitate 
+        comparison. The data was transformed to show only the top 5 most frequent statuses, with other statuses grouped into the 
+        "Others" category.
     </p>
     <p>
-        <strong>Interactivity:</strong> This chart does not have additional interactivity but is still effective for comparing the 
-        top 5 License Statuses in Chicago.
+        <strong>Interactivity:</strong> This chart does not have additional interactivity, but it is effective for visually comparing 
+        the top 5 license statuses in Chicago.
     </p>
     <p><a href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/raw/main/licenses_fall2022.csv">The Data</a></p>
     <p><a href="https://github.com/dyc3-is445/HW6/blob/main/bar_chart.json">The Analysis</a></p>
